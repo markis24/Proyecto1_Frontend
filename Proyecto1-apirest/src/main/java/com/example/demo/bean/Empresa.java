@@ -1,5 +1,7 @@
 package com.example.demo.bean;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -12,7 +14,12 @@ public class Empresa {
 
 	@Column(nullable = false)
 	private String cif;
-
+	@OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL)
+	
+	@ManyToOne
+	
+	List<Ofertas> ofertas;
+	
 	public Empresa() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -24,31 +31,41 @@ public class Empresa {
 		this.nom = nom;
 		this.cif = cif;
 	}
-
-	private long getId() {
+	// A PARTIR D'AQUÍ CODI GENERAT DES DEL MENÚ "Source"
+    // Els 2 constructors i els getters i setters
+	public long getId() {
 		return id;
 	}
 
-	private void setId(long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
-	private String getNom() {
+	public String getNom() {
 		return nom;
 	}
 
-	private void setNom(String nom) {
+	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-	private String getCif() {
+	public String getCif() {
 		return cif;
 	}
 
-	private void setCif(String cif) {
+	public void setCif(String cif) {
 		this.cif = cif;
 	}
+
+	public List<Ofertas> getOfertas() {
+		return ofertas;
+	}
+
+	public void setOfertas(List<Ofertas> ofertas) {
+		this.ofertas = ofertas;
+	}
+	
+	
 }
-	// A PARTIR D'AQUÍ CODI GENERAT DES DEL MENÚ "Source"
-      // Els 2 constructors i els getters i setters
+
 
