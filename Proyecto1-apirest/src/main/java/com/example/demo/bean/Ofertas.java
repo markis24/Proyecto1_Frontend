@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 public class Ofertas {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,6 +19,11 @@ public class Ofertas {
 
     public Ofertas() {
         super();
+    }
+
+    public Ofertas(String descripcion, Empresa empresa) {
+        this.descripcion = descripcion;
+        this.empresa = empresa;
     }
 
     public Long getId() {
