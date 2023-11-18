@@ -2,19 +2,16 @@ package com.example.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.bean.Ofertas;
 import com.example.demo.exception.OfertasNotFoundException;
 import com.example.demo.repository.OfertasRepository;
 
+@RestController
+@RequestMapping("/api")
 public class OfertasController {
-	@Autowired
+    @Autowired
     private OfertasRepository ofertaRepository;
 
     @GetMapping("/ofertas")
@@ -23,7 +20,7 @@ public class OfertasController {
     }
 
     @GetMapping("/ofertas/{id}")
-    Ofertas buscaPerId(@PathVariable Long id) {
+    public Ofertas buscaPerId(@PathVariable Long id) {
         return ofertaRepository.findById(id)
                 .orElseThrow(() -> new OfertasNotFoundException(id));
     }

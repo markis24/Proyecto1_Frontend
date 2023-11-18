@@ -5,5 +5,5 @@ INSERT INTO empresa (nom, cif) VALUES ('Blanc i Roig SL', 'A98798765');
 
 -- Insertar datos en la tabla ofertas
 INSERT INTO ofertas (descripcion, empresa_id) VALUES ('H', 1);
-INSERT INTO ofertas (descripcion, empresa_id) VALUES ('itic', 5);
+INSERT INTO ofertas (descripcion, empresa_id) VALUES ('itic', 2);
 INSERT INTO ofertas (descripcion, empresa_id) VALUES ('1Blanc i Roig SL', 3);
