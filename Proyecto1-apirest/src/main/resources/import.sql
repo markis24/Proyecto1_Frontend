@@ -1,3 +1,9 @@
-insert into empresa values (1, 'A12312312', 'Indra');
-insert into empresa values (2, 'B45645678', 'itic');
-insert into empresa values (3, 'A98798765', 'Blanc i Roig SL');
+-- Insertar datos en la tabla empresa
+INSERT INTO empresa (nom, cif) VALUES ('Indra', 'A12312312');
+INSERT INTO empresa (nom, cif) VALUES ('itic', 'B45645678');
+INSERT INTO empresa (nom, cif) VALUES ('Blanc i Roig SL', 'A98798765');
+
+-- Insertar datos en la tabla ofertas
+INSERT INTO ofertas (descripcion, empresa_id) VALUES ('H', 1);
+INSERT INTO ofertas (descripcion, empresa_id) VALUES ('itic', 5);
+INSERT INTO ofertas (descripcion, empresa_id) VALUES ('1Blanc i Roig SL', 3);

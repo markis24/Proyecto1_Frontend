@@ -1,52 +1,46 @@
 package com.example.demo.bean;
 
 import jakarta.persistence.*;
-//import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Ofertas {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
-	String descripcion;
-	
-	@OneToMany
-	
-	@JoinColumn(name = "ID")
-	Empresa empresa;
+    private String descripcion;
 
-	public Ofertas() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	// Getters y Setters
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
+    private Empresa empresa;
 
-	public Long getId() {
-		return id;
-	}
+    // Constructores, getters y setters
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Ofertas() {
+        super();
+    }
 
-	public String getDescripcion() {
-		return descripcion;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Empresa getEmpresa() {
-		return empresa;
-	}
+    public String getDescripcion() {
+        return descripcion;
+    }
 
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}
-	
-	
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
 }

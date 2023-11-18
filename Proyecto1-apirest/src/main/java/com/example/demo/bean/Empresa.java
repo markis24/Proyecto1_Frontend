@@ -6,66 +6,59 @@ import jakarta.persistence.*;
 
 @Entity
 public class Empresa {
-	@Id //jakarta.persistence.Id
-	private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Column(nullable = false, unique = true)
-	private String nom;
+    @Column(nullable = false, unique = true)
+    private String nom;
 
-	@Column(nullable = false)
-	private String cif;
-	@OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL)
-	
-	@ManyToOne
-	
-	List<Ofertas> ofertas;
-	
-	public Empresa() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    @Column(nullable = false)
+    private String cif;
 
-	public Empresa(long id, String nom, String cif) {
-		super();
-		this.id = id;
-		this.nom = nom;
-		this.cif = cif;
-	}
-	// A PARTIR D'AQUÍ CODI GENERAT DES DEL MENÚ "Source"
-    // Els 2 constructors i els getters i setters
-	public long getId() {
-		return id;
-	}
+    @OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL)
+    private List<Ofertas> ofertas;
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    // Constructores, getters y setters
 
-	public String getNom() {
-		return nom;
-	}
+    public Empresa() {
+        super();
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    public Empresa(String nom, String cif) {
+        this.nom = nom;
+        this.cif = cif;
+    }
 
-	public String getCif() {
-		return cif;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setCif(String cif) {
-		this.cif = cif;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public List<Ofertas> getOfertas() {
-		return ofertas;
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	public void setOfertas(List<Ofertas> ofertas) {
-		this.ofertas = ofertas;
-	}
-	
-	
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getCif() {
+        return cif;
+    }
+
+    public void setCif(String cif) {
+        this.cif = cif;
+    }
+
+    public List<Ofertas> getOfertas() {
+        return ofertas;
+    }
+
+    public void setOfertas(List<Ofertas> ofertas) {
+        this.ofertas = ofertas;
+    }
 }
-
-
