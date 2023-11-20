@@ -26,10 +26,9 @@ Este proyecto tiene como objetivo el desarrollo de una aplicación web y móvil 
 
 ## Tecnologías Utilizadas
 
-- **Frontend:** HTML, CSS, Thymeleaf
 - **Backend:** Java
 - **Base de Datos:** MySQL
-- **Control de Versiones:** Git
+- **Control de Versiones:** Git, GitHub
 
 ## Instalación y Uso
 
