@@ -17,7 +17,7 @@ public class Empresa {
     private String cif;
 
     @OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL)
-    private List<Ofertas> ofertas;
+    private List<Oferta> oferta;
 
     // Constructores, getters y setters
 
@@ -54,11 +54,11 @@ public class Empresa {
         this.cif = cif;
     }
 
-    public List<Ofertas> getOfertas() {
-        return ofertas;
+    public List<Oferta> getOferta() {
+        return oferta;
     }
 
-    public void setOfertas(List<Ofertas> ofertas) {
-        this.ofertas = ofertas;
+    public void setOferta(List<Oferta> oferta) {
+        this.oferta = oferta;
     }
 }
